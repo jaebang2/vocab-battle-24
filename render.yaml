@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vocab-battle-24
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TEACHER_PIN
+        sync: false
